@@ -1,22 +1,24 @@
-<div class="container" appDnd (fileDropped)="onFileDropped($event)">
-  <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
-  <i class="fs-4 bi bi-file-earmark-fill"></i>
-  <h3>Drag and drop file here</h3>
-  <h3>or</h3>
-  <label for="fileDropRef">Browse for file</label>
-</div>
-<div class="files-list">
-  <div class="single-file" *ngFor="let file of files; let i = index">
-    <i class="fs-4 bi bi-file-earmark-fill" alt="file"></i>
-    <div class="info">
-      <h4 class="name">
-        {{ file?.name }}
-      </h4>
-      <p class="size">
-        {{ formatBytes(file?.size) }}
-      </p>
-      <app-file-progress [progress]="file?.progress"></app-file-progress>
+    <div class="container" appDnd (fileDropped)="onFileDropped($event)">
+      <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+      <i class="fs-2 bi bi-file-earmark-fill"></i>
+      <h3>Drag and drop file here</h3>
+      <h3>or</h3>
+      <label for="fileDropRef">Browse for file</label>
     </div>
-    <i class="fs-4 bi bi-trash-fill"  alt="file" (click)="deleteFile(i)"></i>
-  </div>
-</div>
+    <div class="files-list">
+      <div class="single-file" *ngFor="let file of files; let i = index">
+        <i class="fs-3 bi bi-file-earmark-fill" alt="file"></i>
+        <div class="info">
+          <h4 class="name">
+            {{ file?.name }}
+          </h4>
+          <p class="size">
+            {{ formatBytes(file?.size) }}
+          </p>
+          <app-file-progress [progress]="file?.progress"></app-file-progress>
+        </div>
+        <i class="fs-4 bi bi-trash-fill"  alt="file" (click)="deleteFile(i)"></i>
+      </div>
+    </div>
+
+

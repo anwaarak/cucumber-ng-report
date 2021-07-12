@@ -1,9 +1,10 @@
 .container {
-  width: 450px;
-  height: 200px;
+  width: 500px;
+  height: 250px;
   padding: 2rem;
   text-align: center;
-  border: dashed 1px #979797;
+  border: dashed 4px #073B63;
+  border-radius: 20px;
   position: relative;
   margin: 0 auto;
 }
@@ -21,7 +22,7 @@
   width: 183px;
   height: 44px;
   border-radius: 21.5px;
-  background-color: #db202f;
+  background-color: #073B63;
   padding: 8px 16px;
 }
 .container h3 {
@@ -29,19 +30,18 @@
   font-weight: 600;
   color: #38424c;
 }
-.fileover {
-  animation: shake 1s;
-  animation-iteration-count: infinite;
-}
+
 .files-list {
   margin-top: 1.5rem;
+  align-content: center;
 }
 .files-list .single-file {
   display: flex;
+  width: 500px;
   padding: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  border: dashed 1px #979797;
+  border: solid 4px #073B63;
   margin-bottom: 1rem;
   display: flex;
   flex-grow: 1;
@@ -60,7 +60,7 @@
 .files-list .single-file .size {
   font-size: 12px;
   font-weight: 500;
-  color: #a4a4a4;
+  color: #353f4a;
   margin: 0;
   margin-bottom: 0.25rem;
 }

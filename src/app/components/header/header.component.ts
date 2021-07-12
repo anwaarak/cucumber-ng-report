@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+ sidebarCollapse: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+clickEvent(){
+      this.sidebarCollapse = !this.sidebarCollapse;
+      console.log('working');
+  }
 }

@@ -1,0 +1,21 @@
+header .navbar {
+  margin-bottom: 0;
+}
+a {
+color: #0a0a0a;
+text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.bg-dark {
+  background-color: #222!important;
+}
+
+.mx-background-top-linear {
+  background: -webkit-linear-gradient(45deg, #1b1e21 25%, #073B63 48%);
+  background: -webkit-linear-gradient(left, #1b1e21 25%, #073B63 48%);
+  background: linear-gradient(45deg, #1b1e21 25%, #073B63 48%);
+}

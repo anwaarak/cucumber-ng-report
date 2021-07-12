@@ -2,8 +2,9 @@
   height: 7px;
   width: 100%;
   border-radius: 4px;
-  background-color: #d0d0d0;
+  background-color: #9ED7F0;
   position: relative;
+  text-align: center;
 }
 .progress-cont .progress {
   width: 0;
@@ -13,6 +14,6 @@
   top: 0;
   left: 0;
   border-radius: 4px;
-  background-color: #4c97cb;
+  background-color: #073B63;
   transition: 0.5s all;
 }
