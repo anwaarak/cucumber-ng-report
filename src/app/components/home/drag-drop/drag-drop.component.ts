@@ -9,20 +9,16 @@ export class DragDropComponent {
 
  @ViewChild("fileDropRef", { static: false }) fileDropEl: ElementRef;
   files: any[] = [];
-
-
-//on file drop handler
+  fileContent: any;
   onFileDropped($event) {
     this.prepareFilesList($event);
   }
-//handle file from browsing
 
+/*
   fileBrowseHandler(files) {
     this.prepareFilesList(files);
-  }
+  }*/
 
-
- // Delete file from files list
 
   deleteFile(index: number) {
     if (this.files[index].progress < 100) {
@@ -31,8 +27,6 @@ export class DragDropComponent {
     }
     this.files.splice(index, 1);
   }
-
-//Simulate the upload process
 
   uploadFilesSimulator(index: number) {
     setTimeout(() => {
@@ -51,8 +45,6 @@ export class DragDropComponent {
     }, 1000);
   }
 
-//Convert Files list to normal array list
-
   prepareFilesList(files: Array<any>) {
     for (const item of files) {
       item.progress = 0;
@@ -62,10 +54,6 @@ export class DragDropComponent {
     this.uploadFilesSimulator(0);
   }
 
-
-   //format bytes
-   //@param bytes (File size in bytes)
-   // @param decimals (Decimals point)
 
   formatBytes(bytes, decimals = 2) {
     if (bytes === 0) {
@@ -77,4 +65,14 @@ export class DragDropComponent {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
+    fileBrowseHandler(fileList: FileList): void {
+    let file = fileList[0];
+    let fileReader: FileReader = new FileReader();
+    let self = this;
+    fileReader.onloadend = function(x) {
+      self.fileContent = fileReader.result;
+    }
+    fileReader.readAsText(file);
+  }
 }
+

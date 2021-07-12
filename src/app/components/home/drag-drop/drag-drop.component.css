@@ -67,3 +67,9 @@
 .files-list .single-file .info {
   width: 100%;
 }
+.textfile{
+  text-align: center;
+  height: auto;
+  background-color: aliceblue;
+  border-radius: 20px;
+}

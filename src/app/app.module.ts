@@ -15,6 +15,7 @@ import { DndDirective } from './directives/dnd.directive';
 import { FileProgressComponent } from './components/home/file-progress/file-progress.component';
 import { ChartComponent } from './components/dashboard/chart/chart.component';
 import { ReportComponent } from './components/dashboard/report/report.component';
+import { ViewFileComponent } from './components/home/view-file/view-file.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReportComponent } from './components/dashboard/report/report.component'
     DndDirective,
     FileProgressComponent,
     ChartComponent,
-    ReportComponent
+    ReportComponent,
+    ViewFileComponent
   ],
   imports: [
     BrowserModule,
