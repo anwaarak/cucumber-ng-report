@@ -16,6 +16,9 @@ import { FileProgressComponent } from './components/home/file-progress/file-prog
 import { ChartComponent } from './components/dashboard/chart/chart.component';
 import { ReportComponent } from './components/dashboard/report/report.component';
 import { ViewFileComponent } from './components/home/view-file/view-file.component';
+import { CucumberJsonParserComponent } from './components/dashboard/cucumber-json-parser/cucumber-json-parser.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,13 +33,15 @@ import { ViewFileComponent } from './components/home/view-file/view-file.compone
     FileProgressComponent,
     ChartComponent,
     ReportComponent,
-    ViewFileComponent
+    ViewFileComponent,
+    CucumberJsonParserComponent
   ],
   imports: [
     BrowserModule,
     AgGridModule.withComponents([]),
     AgChartsAngularModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
