@@ -38,10 +38,12 @@
     </table>
   </div>
 
+  
+
+
 <ul>
     <li *ngFor="let feature of features">
-        <div ng-repeat="(key,val) in features">{{ key }}</div>
         <span>{{feature | json }}</span>
-
     </li>
 </ul>
+
