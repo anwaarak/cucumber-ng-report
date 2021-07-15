@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { ViewFileComponent } from './components/home/view-file/view-file.component';
+import { ReportComponent } from './components/dashboard/report/report.component';
 import { CucumberJsonParserComponent } from './components/dashboard/cucumber-json-parser/cucumber-json-parser.component';
+import { ReportTreeViewComponent } from './components/dashboard/report-tree-view/report-tree-view.component';
 
 
 const routes: Routes = [
@@ -11,7 +13,9 @@ const routes: Routes = [
     { path: "home", component: HomeComponent },
     { path: "dashboard", component: DashboardComponent },
     { path: "view-file", component: ViewFileComponent },
-    { path: "json", component: CucumberJsonParserComponent }
+    { path: "reports", component: ReportComponent },
+    { path: "json", component: CucumberJsonParserComponent },
+    { path: "viewtree", component: ReportTreeViewComponent }
 
 ];
 

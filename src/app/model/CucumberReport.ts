@@ -6,5 +6,4 @@ export interface  CucumberReport {
     line : number;
     keyword : string;
     uri : string;
-
 }

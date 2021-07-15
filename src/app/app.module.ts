@@ -18,6 +18,9 @@ import { ReportComponent } from './components/dashboard/report/report.component'
 import { ViewFileComponent } from './components/home/view-file/view-file.component';
 import { CucumberJsonParserComponent } from './components/dashboard/cucumber-json-parser/cucumber-json-parser.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReportTreeViewComponent } from './components/dashboard/report-tree-view/report-tree-view.component';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { CdkTreeModule } from '@angular/cdk/tree';
 
 
 @NgModule({
@@ -34,15 +37,19 @@ import { HttpClientModule } from '@angular/common/http';
     ChartComponent,
     ReportComponent,
     ViewFileComponent,
-    CucumberJsonParserComponent
+    CucumberJsonParserComponent,
+    ReportTreeViewComponent,
   ],
   imports: [
     BrowserModule,
     AgGridModule.withComponents([]),
     AgChartsAngularModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NoopAnimationsModule
   ],
+  exports: [
+    CdkTreeModule],
   providers: [],
   bootstrap: [AppComponent]
 })
