@@ -21,6 +21,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReportTreeViewComponent } from './components/dashboard/report-tree-view/report-tree-view.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkTreeModule } from '@angular/cdk/tree';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -46,7 +51,11 @@ import { CdkTreeModule } from '@angular/cdk/tree';
     AgChartsAngularModule,
     AppRoutingModule,
     HttpClientModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    MatSliderModule,
+MatButtonModule,
+MatTreeModule,
+MatIconModule,
   ],
   exports: [
     CdkTreeModule],
