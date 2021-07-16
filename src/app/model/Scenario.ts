@@ -1,4 +1,4 @@
-export interface  CucumberReport {
+export interface  Scenario {
 
     id : string;
     name : string;
@@ -6,4 +6,5 @@ export interface  CucumberReport {
     line : number;
     keyword : string;
     uri : string;
+
 }

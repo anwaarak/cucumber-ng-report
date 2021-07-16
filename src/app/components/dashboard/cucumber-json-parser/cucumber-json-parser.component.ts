@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { AfterViewInit, ElementRef} from '@angular/core';
-import { CucumberReport } from 'src/app/model/CucumberReport';
+import { Feature } from 'src/app/model/Feature';
 
 
 
@@ -15,6 +15,9 @@ export class CucumberJsonParserComponent implements OnInit {
   features: any = [];
   constructor(private httpClient: HttpClient){}
   ngOnInit(){
-
+    this.httpClient.get<Feature[]>(this.jsonPath).subscribe(data =>{
+      console.log(data);
+      this.features = data;  
+    })
   }
 }
