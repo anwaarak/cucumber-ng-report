@@ -49,6 +49,10 @@
 
 
 
+<tr *ngFor="let record of features | async">
+  <td> {{ record.name }} </td>
+</tr>
+
 <ul>
   <li *ngFor="let feature of features">
     <span>{{feature | json }}</span>
