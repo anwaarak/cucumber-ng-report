@@ -25,6 +25,11 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTreeModule } from '@angular/material/tree';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -53,9 +58,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     NoopAnimationsModule,
     MatSliderModule,
-MatButtonModule,
-MatTreeModule,
-MatIconModule,
+    MatButtonModule,
+    MatTreeModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatListModule,
   ],
   exports: [
     CdkTreeModule],

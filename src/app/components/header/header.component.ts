@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
- sidebarCollapse: boolean = false;
-  constructor() { }
+  @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
 
-  ngOnInit(): void {
-  }
-clickEvent(){
-      this.sidebarCollapse = !this.sidebarCollapse;
-      console.log('working');
+  constructor(private router: Router) {}
+
+  ngOnInit(): void {}
+
+  toggleSidebar() {
+    this.toggleSidebarForMe.emit();
   }
 }

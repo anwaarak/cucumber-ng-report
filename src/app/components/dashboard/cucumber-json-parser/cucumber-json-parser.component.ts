@@ -17,7 +17,7 @@ export class CucumberJsonParserComponent implements OnInit {
   ngOnInit(){
     this.httpClient.get<Feature[]>(this.jsonPath).subscribe(data =>{
       console.log(data);
-      this.features = data;  
+      this.features = data;
     })
   }
 }

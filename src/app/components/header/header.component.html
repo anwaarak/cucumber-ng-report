@@ -1,21 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark mx-background-top-linear">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="#">Team FutureX - Cucumber Html Report</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<mat-toolbar>
+  <mat-toolbar-row class="justify-content-between">
+    <button mat-icon-button (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">New</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">History</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/">Settings</a>
+    <div class="row mr-2 ml-auto">
+      <ul class="row m-0 align-items-center">
+        <li>
+          <button
+            mat-button
+            [matMenuTriggerFor]="menu"
+            class="user mt-2 d-flex align-items-center">
+            Settings
+            <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+              <mat-icon>exit_to_app</mat-icon>
+              Exit
+            </button>
+          </mat-menu>
         </li>
       </ul>
     </div>
-  </div>
-</nav>
+  </mat-toolbar-row>
+</mat-toolbar>

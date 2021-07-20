@@ -1,39 +1,14 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
-        <div class="navbar col-auto col-md-3 col-xl-2 px-sm-2 px-0">
-            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
-
-                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                    <li class="nav-item">
-                        <a routerLink="/home" class="nav-link align-middle px-0">
-                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a routerLink="/" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-speedometer2"></i> <span class="ms-1 d-none d-sm-inline">Dashboard</span> </a>
-                    </li>
-                    <li>
-                        <a routerLink="/viewtree" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-table"></i> <span class="ms-1 d-none d-sm-inline">Tree view</span></a>
-                    </li>
-                    <li>
-                        <a routerLink="/"  class="nav-link px-0 align-middle ">
-                          <i class="fs-4 bi bi-graph-up"></i> <span class="ms-1 d-none d-sm-inline">Graphs</span></a>
-                    </li>
-                    <li>
-                        <a routerLink="/" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-grid"></i> <span class="ms-1 d-none d-sm-inline">Reports</span> </a>
-                    </li>
-                    <li>
-                        <a routerLink="/" class="nav-link px-0 align-middle">
-                            <i class="fs-4 bi-people"></i> <span class="ms-1 d-none d-sm-inline">Settings</span> </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col py-3">
-            <app-report></app-report>
-        </div>
-    </div>
-</div>
+<mat-nav-list>
+  <div class="logo py-4">
+   <!-- <img src="" alt="Logo" />-->
+    Cucumber HTML Reports
+  </div>
+  <mat-divider></mat-divider>
+ <!-- <h2 matSubheader class="mt-2">Tasks</h2>-->
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+    <mat-icon>home</mat-icon> Home
+  </a>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
+    <mat-icon>dashboard</mat-icon> Dashboard
+  </a>
+</mat-nav-list>
