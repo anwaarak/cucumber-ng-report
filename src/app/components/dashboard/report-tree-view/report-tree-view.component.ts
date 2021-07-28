@@ -13,31 +13,45 @@ interface ExampleFlatNode {
   level: number;
 }
 const TREE_DATA: FoodNode[] = [
+  { name: 'id : account-holder-withdraws-cash' },
   {
-    name: 'Fruit',
+    name: 'tags',
     children: [
-      { name: 'Kiwi' },
-      { name: 'Banana' },
-      { name: 'PineApple' },
-    ]
-  }, {
-    name: 'Vegetables',
-    children: [
-      {
-        name: 'Green',
-        children: [
-          { name: 'Spinach' },
-          { name: 'Peas' },
-        ]
-      }, {
-        name: 'Orange',
-        children: [
-          { name: 'Pumpkins' },
-          { name: 'Carrots' },
-        ]
-      },
+      { name: 'name : @featureTag' },
+      { name: ' line: 1' },
     ]
   },
+  { name: 'description : This is description of the feature' },
+  { name: 'name : 1st feature' },
+  { name: 'keyword : Feature' },
+  { name: 'line : 2' },
+  { name: 'elements',
+    children: [
+      { name: 'description : Perfect background' },
+      { name: 'name : Activate Credit Card' },
+      { name: 'keyword" : "Background' },
+      { name: 'line : 7'},
+      { name: 'steps',
+      children: [
+        { name : 'result',
+        children: [
+          { name: 'duration : 99107447000' },
+          { name: 'status : passed' },
+        ] },
+        { name: 'name : I have a new credit card'},
+        { name: 'keyword : Given'},
+        { name: 'line : 8'},
+        { name: 'match',
+        children:[
+          { name: 'location : ATMScenario.I_have_a_new_credit_card()'}
+        ]},
+        { name : 'embeddings',
+        children: [
+        { name : 'mime_type : image/url' },
+        { name : 'data : aHR0cDovL2xvY2FsaG9zdC9zdGF0aWMvbG9nby5wbmc= ' }
+        ]},
+      ]}
+    ] },
 ];
 
 

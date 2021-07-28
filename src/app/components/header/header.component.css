@@ -10,13 +10,17 @@ button {
   outline: none;
   border: 0;
   background: transparent;
+  color:white
 }
 .user {
   font-size: 14px;
 }
-mat-toolbar {
-  background: #073B63;
+mat-toolbar{
+  background: -webkit-linear-gradient(45deg, #1b1e21 25%, #073B63 48%);
+  background: -webkit-linear-gradient(left, #1b1e21 25%, #073B63 48%);
+  background: linear-gradient(45deg, #1b1e21 25%, #073B63 48%);
 }
+
 .user-image {
   border-radius: 50%;
   width: 50px;
