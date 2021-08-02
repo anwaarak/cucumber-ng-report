@@ -1,20 +1,68 @@
-<div class="container">
-  <div class="row content-box">
-    <div class="col-12 ">
-      <header class="header">
-        <h2 class="">Reports</h2>
-      </header>
-<div style="flex-grow: 1;">
-  <ag-grid-angular
-  #agGrid
-  id="myGrid"
-  style="width:auto; height: 450px;"
-  class="ag-theme-alpine"
-      [rowData]="rowData | async"
-      [columnDefs]="columnDefs"
-      [animateRows]="true">
-  </ag-grid-angular>
-  </div>
+<div></div>
+&nbsp;&nbsp;
+&nbsp;&nbsp;<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Enter keyword">
+</mat-form-field>
+<div>
+
+  &nbsp;&nbsp;<button mat-raised-button   (click)="exporter.exportTable('xlsx', {fileName:'TestCaseReport'})">Excel</button>
+  &nbsp;&nbsp;<button mat-raised-button  (click)="exporter.exportTable('csv', {fileName:'TestCaseReport'})">Csv</button>
+  &nbsp;&nbsp;<button mat-raised-button  (click)="exporter.exportTable('json', {fileName:'TestCaseReport'})">Json</button>
+  &nbsp;&nbsp;<button mat-raised-button  (click)="exporter.exportTable('txt', {fileName:'TestCaseReport'})">Txt</button>
 </div>
-</div>
+
+<div>.</div>
+<div></div>
+<div class="mat-elevation-z8">
+<table mat-table matTableExporter [dataSource]="dataSource" #exporter="matTableExporter" class="mat-elevation-z8" matSort>
+
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Tags Column -->
+    <ng-container matColumnDef="tags">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Tags </th>
+      <td mat-cell *matCellDef="let element"> {{element.tags}} </td>
+    </ng-container>
+
+    <!-- Description Column -->
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <!-- Keyword Column -->
+    <ng-container matColumnDef="keyword">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Keyword </th>
+      <td mat-cell *matCellDef="let element"> {{element.keyword}} </td>
+    </ng-container>
+
+     <!-- Line Column -->
+     <ng-container matColumnDef="line">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Line </th>
+        <td mat-cell *matCellDef="let element"> {{element.line}} </td>
+      </ng-container>
+
+      <!-- ELements Column -->
+      <ng-container matColumnDef="elements">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Elements</th>
+        <td mat-cell *matCellDef="let element"> {{element.elements}} </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
 </div>
