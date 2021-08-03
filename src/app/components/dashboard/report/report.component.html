@@ -1,3 +1,9 @@
+<div class="container">
+  <div class="row content-box">
+    <div class="col-12 ">
+      <header class="header">
+        <h2>Reports</h2>
+      </header>
 <div></div>
 &nbsp;&nbsp;
 &nbsp;&nbsp;<mat-form-field>
@@ -65,4 +71,29 @@
   </table>
 
   <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+</div>
+</div>
+
+
+
+<div class="container">
+  <div class="row content-box">
+    <div class="col-12 ">
+      <header class="header">
+        <h2 class="">AG-Grid Report</h2>
+      </header>
+<div style="flex-grow: 1;">
+  <ag-grid-angular
+  #agGrid
+  id="myGrid"
+  style="width:auto; height: 450px;"
+  class="ag-theme-alpine"
+      [rowData]="rowData | async"
+      [columnDefs]="columnDefs"
+      [animateRows]="true">
+  </ag-grid-angular>
+  </div>
+</div>
+</div>
 </div>

@@ -4,3 +4,10 @@ table{
 th.mat-sort-header-sorted {
   color: black;
 }
+.header{
+  text-align: center;
+  padding-top: 2%;
+}
+th, button{
+  background-color: #5089C6;
+}
