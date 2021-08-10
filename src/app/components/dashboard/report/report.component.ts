@@ -34,7 +34,8 @@ export class ReportComponent implements OnInit {
     columnDefs = [{
         headerName: '',
         children: [
-      { headerName: 'Feature', field: 'name', sortable: true, filter: true, resizable: true,  width : 200,checkboxSelection: true,cellStyle: { backgroundColor: '#B5EAEA' }},
+      { headerName: 'Feature', field: 'name', sortable: true, filter: true, resizable: true,  width : 200,
+      checkboxSelection: true,cellStyle: { backgroundColor: '#B5EAEA' }},
       ],
       },
       {

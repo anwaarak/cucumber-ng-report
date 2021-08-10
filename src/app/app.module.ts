@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AgGridModule } from 'ag-grid-angular';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AgChartsAngularModule } from 'ag-charts-angular';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -19,6 +20,8 @@ import { ViewFileComponent } from './components/home/view-file/view-file.compone
 import { CucumberJsonParserComponent } from './components/dashboard/cucumber-json-parser/cucumber-json-parser.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportTreeViewComponent } from './components/dashboard/report-tree-view/report-tree-view.component';
+
+
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkTreeModule } from '@angular/cdk/tree';
 import { MatSliderModule } from '@angular/material/slider';
@@ -37,6 +40,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatTableExporterModule } from 'mat-table-exporter';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -62,6 +67,8 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     AgChartsAngularModule,
     AppRoutingModule,
     HttpClientModule,
+
+
     NoopAnimationsModule,
     MatSliderModule,
     MatButtonModule,
@@ -78,6 +85,10 @@ import { MatTableExporterModule } from 'mat-table-exporter';
     MatFormFieldModule,
     MatInputModule,
     MatTableExporterModule,
+    MatCheckboxModule,
+    MatCardModule,
+     FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CdkTreeModule],
