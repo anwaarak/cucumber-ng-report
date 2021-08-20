@@ -29,10 +29,52 @@ export class ReportComponent implements OnInit {
   constructor(private _dataService: DataService,
     private _router: Router,
     private http: HttpClient) { }
+    //ag-grid
+    rowData : any;
+    columnDefs = [{
+        headerName: '',
+        children: [
+      { headerName: 'Feature', field: 'name', sortable: true, filter: true, resizable: true,  width : 200,
+      checkboxSelection: true,cellStyle: { backgroundColor: '#B5EAEA' }},
+      ],
+      },
+      {
+       headerName: 'Steps',
+        children: [
+      { headerName: 'Description', field: 'description', sortable: true, filter: true, resizable: true,  width : 200,cellStyle: { backgroundColor: '#EDF6E5' }},
+      { headerName: 'Name', field: 'name', sortable: true, filter: true, resizable: true, width : 200,cellStyle: { backgroundColor: '#FFBCBC' }},
+      ],
+      },
+       {
+       headerName: 'Scenarios',
+        children: [
+      { headerName: 'Keyword', field: 'keyword', sortable: true, filter: true, resizable: true, width : 250,cellStyle: { backgroundColor: '#C9CBFF' }},
+      ],
+      },
+      {
+       headerName: 'Features',
+        children: [
+      { headerName: 'Line', field: 'line', sortable: true, filter: true, resizable: true, width : 200,cellStyle: { backgroundColor: '#CDF3A2' }},
+      { headerName: 'Elements', field: 'elements', sortable: true, filter: true, resizable: true, width : 250,cellStyle: { backgroundColor: '#F38BA0' }},
+         ],
+      },
+        ];
 
   ngOnInit(): void {
-
+    //aggrid
+     this.rowData = this._dataService.getReport()
+     this.dataSource.paginator = this.paginator;
+     this.dataSource.sort=this.sort;
+     this.getReport();
   }
 
+  getReport(){
+   let resp = this._dataService.getReport();
+   resp.subscribe(report=>this.dataSource.data = report as Report[]);
+   }
+
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
   }
 
