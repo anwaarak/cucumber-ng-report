@@ -1,41 +1,13 @@
-
+import { Result } from './../../../Dummy model/Result';
+import { Step } from './../../../Dummy model/Step';
+import { Elements } from './../../../Dummy model/Elements';
 import { Component, OnInit } from '@angular/core';
 import {NestedTreeControl} from '@angular/cdk/tree';
-import {MatTreeNestedDataSource} from '@angular/material/tree';
-
-interface Description {
-    id: string;
-    tags: any[];
-    description: string;
-    name: string;
-    keyword: string;
-    line: number;
-    elements: Elements[];
-    uri: string;
-  }
-
-  interface Elements {
-    description: string;
-    name: string;
-    keyword: string;
-    line: number;
-    steps: Step[];
-    type: string;
-  }
-
-  interface Step {
-    result: Result;
-    name: string;
-    keyword: string;
-    line: number;
-    match: any;
-    embeddings: any[];
-  }
-
-  interface Result {
-    duration: string;
-    status: string;
-  }
+import { MatTreeNestedDataSource } from '@angular/material/tree';
+import { Description } from '../../../Dummy model/Description';
+import { DataService } from '../../../services/data.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
   interface TreeNode {
     name: string;
@@ -777,19 +749,34 @@ function parseResult(r: Result) {
 
 export class ReportTreeViewComponent implements OnInit {
 
+   description: any = [];
+
   treeControl = new NestedTreeControl<TreeNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<TreeNode>();
 
-  constructor() {
+  constructor( private _dataService: DataService,
+    private _router: Router,
+    private http: HttpClient ) {
     constructTree(null)
     //parse(abc());
     this.dataSource.data = TREE_DATA;
   }
 
   ngOnInit(): void {
+    this.getDescription();
+
   }
 
   hasChild = (_: number, node: TreeNode) => !!node.children && node.children.length > 0;
+
+  getDescription(){
+     this._dataService.getDescription()
+        .subscribe(data => {
+          console.log(data);
+          this.description = data;
+        },
+         error => console.log(error));
+  }
   }
 
 

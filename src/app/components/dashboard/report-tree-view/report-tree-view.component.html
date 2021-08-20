@@ -10,10 +10,14 @@
       <div class="mat-tree-node">
         <button mat-icon-button matTreeNodeToggle
                 [attr.aria-label]="'Toggle ' + node.name">
+
           <mat-icon class="mat-icon-rtl-mirror">
-            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+            {{treeControl.isExpanded(node) ? 'arrow_drop_down' : 'arrow_right'}}
           </mat-icon>
         </button>
+        <mat-icon class="mat-icon-rtl-mirror">
+          short_text
+      </mat-icon>
         {{node.name}}
       </div>
       <!-- There is inline padding applied to this div using styles.
@@ -24,3 +28,4 @@
     </div>
   </mat-nested-tree-node>
 </mat-tree>
+

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { Description } from '../Dummy model/Description';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +16,9 @@ export class DataService {
   //get report
   getReport(){
       return this.http.get(this._getReportUrl);
+     }
+
+      getDescription(){
+      return this.http.get<Description[]>(this._getReportUrl);
      }
 }
