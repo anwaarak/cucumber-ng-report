@@ -701,7 +701,7 @@ function parseElement(e: Elements) {
   if(e.description)
     parent.name = e.description;
   else
-    parent.name = "Element Decription"
+    parent.name = "Element Description"
   for(let i= 0; i < e.steps.length; ++i) {
     let step: TreeNode = parseStep(e.steps[i]);
     parent.children.push(step);
