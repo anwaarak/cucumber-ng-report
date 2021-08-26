@@ -17,11 +17,13 @@
   top: 0;
   left: 0;
 }
-.container label {
+
+.main-button {
   color: white;
-  border-radius: 21.5px;
+  border-radius: 20px;
   background-color: #073B63;
   padding: 8px 16px;
+  border: none;
 }
 .container h3 {
   font-size: 20px;

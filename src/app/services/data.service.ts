@@ -19,6 +19,6 @@ export class DataService {
      }
 
       getDescription(){
-      return this.http.get<Description[]>(this._getReportUrl);
+      return this.http.get<JSON>(this._getReportUrl);
      }
 }

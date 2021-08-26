@@ -34,28 +34,35 @@ export class ReportComponent implements OnInit {
     columnDefs = [{
         headerName: '',
         children: [
-      { headerName: 'Feature', field: 'name', sortable: true, filter: true, resizable: true,  width : 200,
+      { headerName: 'Feature', field: 'name', sortable: true, filter: true, resizable: true,  width : 150,
       checkboxSelection: true,cellStyle: { backgroundColor: '#B5EAEA' }},
       ],
       },
       {
        headerName: 'Steps',
         children: [
-      { headerName: 'Description', field: 'description', sortable: true, filter: true, resizable: true,  width : 200,cellStyle: { backgroundColor: '#EDF6E5' }},
-      { headerName: 'Name', field: 'name', sortable: true, filter: true, resizable: true, width : 200,cellStyle: { backgroundColor: '#FFBCBC' }},
+      { headerName: 'Passed', field: '', sortable: true, filter: true, resizable: true,  width : 100,cellStyle: { backgroundColor: '#EDF6E5' }},
+      { headerName: 'Failed', field: '', sortable: true, filter: true, resizable: true, width : 100,cellStyle: { backgroundColor: '#FFBCBC' }},
+      { headerName: 'Skipped', field: '', sortable: true, filter: true, resizable: true, width : 100,cellStyle: { backgroundColor: '#C9CBFF' }},
+      { headerName: 'Pending', field: '', sortable: true, filter: true, resizable: true, width : 100,cellStyle: { backgroundColor: '#CDF3A2' }},
+      { headerName: 'Undefined', field: '', sortable: true, filter: true, resizable: true,  width : 120,cellStyle: { backgroundColor:  '#FFBCBC' }},
+      { headerName: 'Total', field: '', sortable: true, filter: true, resizable: true,  width : 80,cellStyle: { backgroundColor:  '#B5EAEA' }},
+
       ],
       },
        {
        headerName: 'Scenarios',
         children: [
-      { headerName: 'Keyword', field: 'keyword', sortable: true, filter: true, resizable: true, width : 250,cellStyle: { backgroundColor: '#C9CBFF' }},
-      ],
+      { headerName: 'Passed', field: '', sortable: true, filter: true, resizable: true,  width : 100,cellStyle: { backgroundColor: '#EDF6E5' }},
+      { headerName: 'Failed', field: '', sortable: true, filter: true, resizable: true, width : 100,cellStyle: { backgroundColor: '#FFBCBC' }},
+      { headerName: 'Total', field: '', sortable: true, filter: true, resizable: true,  width : 100,cellStyle: { backgroundColor:  '#B5EAEA' }},
+         ],
       },
       {
        headerName: 'Features',
         children: [
-      { headerName: 'Line', field: 'line', sortable: true, filter: true, resizable: true, width : 200,cellStyle: { backgroundColor: '#CDF3A2' }},
-      { headerName: 'Elements', field: 'elements', sortable: true, filter: true, resizable: true, width : 250,cellStyle: { backgroundColor: '#F38BA0' }},
+      { headerName: 'Duration', field: 'elements.0.steps.0.result.duration', sortable: true, filter: true, resizable: true,  width : 110,cellStyle: { backgroundColor: '#EDF6E5' }},
+      { headerName: 'Status', field: 'elements.0.steps.0.result.status', sortable: true, filter: true, resizable: true, width : 110,cellStyle: { backgroundColor: '#FFBCBC' }},
          ],
       },
         ];

@@ -1,10 +1,12 @@
     <div class="container" appDnd (fileDropped)="onFileDropped($event)">
-      <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" />
+      <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event.target.files)" accept=".json" />
       <i class="fs-2 bi bi-file-earmark-fill"></i>
       <h3>Drag and drop file here</h3>
       <h3>or</h3>
-      <label for="fileDropRef">Browse for file</label>
+      <button class="main-button" for="fileDropRef">Browse for file</button>
     </div>
+    <div>
+
     <div class="files-list">
       <div class="single-file" *ngFor="let file of files; let i = index">
         <i class="fs-3 bi bi-file-earmark-fill" alt="file"></i>

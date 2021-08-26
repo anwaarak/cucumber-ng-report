@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-drag-drop',
@@ -10,6 +11,13 @@ export class DragDropComponent {
  @ViewChild("fileDropRef", { static: false }) fileDropEl: ElementRef;
   files: any[] = [];
   fileContent: any;
+  file: any;
+
+ constructor(private _http: HttpClient){}
+
+  ngOnInit(){
+  }
+
   onFileDropped($event) {
     this.prepareFilesList($event);
   }
@@ -73,6 +81,8 @@ export class DragDropComponent {
       self.fileContent = fileReader.result;
     }
     fileReader.readAsText(file);
+    console.log(file)
   }
-}
+
+  }
 
