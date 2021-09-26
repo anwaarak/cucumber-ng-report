@@ -15,8 +15,7 @@ const routes: Routes = [
     { path: "view-file", component: ViewFileComponent },
     { path: "reports", component: ReportComponent },
     { path: "json", component: CucumberJsonParserComponent },
-    { path: "viewtree", component: ReportTreeViewComponent }
-
+    { path: "treeView", component: ReportTreeViewComponent }
 ];
 
 @NgModule({

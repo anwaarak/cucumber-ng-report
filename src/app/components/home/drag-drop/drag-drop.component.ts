@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-drag-drop',
@@ -13,7 +14,7 @@ export class DragDropComponent {
   fileContent: any;
   file: any;
 
- constructor(private _http: HttpClient){}
+ constructor(private _http: HttpClient, private _router: Router){}
 
   ngOnInit(){
   }
@@ -81,7 +82,11 @@ export class DragDropComponent {
       self.fileContent = fileReader.result;
     }
     fileReader.readAsText(file);
-    console.log(file)
+    fileReader.onload = () => {
+        localStorage.setItem('myData', fileReader.result as string);
+        this._router.navigate(['/dashboard'])
+      };
+      console.log(this.fileContent);
   }
 
   }
